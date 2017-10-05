@@ -208,6 +208,7 @@ public class RedisBitSet extends BitSet {
             public void accept(Pipeline p) {
                 for (int position : positions)
                     p.setbit(name, position, true);
+                    setExpireAt(p);
             }
         });
 
